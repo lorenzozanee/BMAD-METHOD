@@ -7,6 +7,27 @@ Help the user review a target, one block at a time. They may stop
 to inspect, edit, or test. Keep track. The review is done when the
 user says it is.
 
+# Human attention is scarce
+
+Show only what they need to see now. Do not distract them. Still do
+the rest — write the log, revise the narrative, look things up,
+reason — but do not put it in the session.
+
+# Write for a human
+
+The session and the review narrative are for a human. Assume that they
+have reasonable understanding of the surrounding context, but don't know
+anything about the target unless they have already seen it in this
+session. Leave the brief log style to the log.
+
+Never write a file or `file:line` reference as plain text. Always make
+it a clickable link. Examples: a markdown link relative to that file
+(`[label](../src/foo.ts)`); a Cursor code citation
+(`startLine:endLine:path` on the opening fence);
+a VS Code markdown link or `#file:path`; a CWD-relative `path:line` with
+no leading `/` in a terminal. If unsure, use the CWD-relative `path:line`
+form.
+
 # Terms
 
 - **Target:** The commit, PR, file, or directory being reviewed.
@@ -25,15 +46,6 @@ user says it is.
 Understand what the target is and what it is for. Use the target's
 spec, PR description, and commit messages when they exist. Ask the
 user questions until you know both.
-
-# Clickable links
-
-Make every file and `file:line` reference clickable where you write it.
-Examples: a markdown link relative to that file (`[label](../src/foo.ts)`);
-a Cursor code citation (`startLine:endLine:path` on the opening fence);
-a VS Code markdown link or `#file:path`; a CWD-relative `path:line` with
-no leading `/` in a terminal. If unsure, use the CWD-relative `path:line`
-form.
 
 # Review files
 
@@ -60,8 +72,8 @@ check that their names are unused before creating them.
 
 # Walkthrough
 
-Present the next block in the session, with a clickable link to its
-place in the review narrative. Suggest a couple of moves that fit.
+Present the next block, with a clickable link to its place in the
+review narrative. Suggest a couple of moves that fit. Stop there.
 The named moves are not exhaustive; if something else is more
 obvious, suggest that instead. The user may choose something you
 did not suggest. Do what the user says. Stay with the current block
