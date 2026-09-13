@@ -23,13 +23,16 @@ have reasonable understanding of the surrounding context, but don't know
 anything about the target unless they have already seen it in this
 session. Leave the brief log style to the log.
 
-Never write a file or `file:line` reference as plain text. Always make
-it a clickable link. Examples: a markdown link relative to that file
-(`[label](../src/foo.ts)`); a Cursor code citation
-(`startLine:endLine:path` on the opening fence);
-a VS Code markdown link or `#file:path`; a CWD-relative `path:line` with
-no leading `/` in a terminal. If unsure, use the CWD-relative `path:line`
+Never write a file or `file:line` reference as plain text.
+
+In the review narrative, every file and `file:line` is a markdown
+link relative to that file (`[label](../src/foo.ts)`). No other
 form.
+
+In the session, never write a markdown link. Use a form the host
+can click: a Cursor code citation (`startLine:endLine:path` on the
+opening fence); a VS Code `#file:path`; or a CWD-relative
+`path:line` with no leading `/`. If unsure, use `path:line`.
 
 # Terms
 
