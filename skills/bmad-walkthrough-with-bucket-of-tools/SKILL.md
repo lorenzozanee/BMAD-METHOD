@@ -13,6 +13,9 @@ Show only what they need to see now. Do not distract them. Still do
 the rest — write the log, revise the narrative, look things up,
 reason — but do not put it in the session.
 
+To write the log and call other tools silently, use a background
+subagent.
+
 # Write for a human
 
 The session and the review narrative are for a human. Assume that they
@@ -38,8 +41,8 @@ form.
   Owns block review status.
 - **Review log:** Append-only record of review activities and outcomes.
 - **Finding:** A concrete issue from inspection.
-- **Move:** A user-selected action, may be maybe from a repertoire of 
-  moves above.
+- **Move:** A user-selected action, maybe from a repertoire of
+  moves below.
 
 # Orientation
 
@@ -69,6 +72,9 @@ check that their names are unused before creating them.
 - **Review log:** Read and use [the log template](./templates/log-template.md).
   Keep findings, decisions, edits, and test results out of the review
   narrative.
+
+If you are running in a sidebar of VS Code, Cursor, or another
+editor, open the narrative file in the editor.
 
 # Walkthrough
 
