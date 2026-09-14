@@ -1,16 +1,25 @@
 # Step 3: Walkthrough
 
-Present the next block, with a clickable link to its place in the
-review narrative. Suggest a couple of moves that fit. Stop there.
-The named moves are not exhaustive; if something else is more
-obvious, suggest that instead. The user may choose something you
-did not suggest. Do what the user says. Stay with the current block
-until the user explicitly says it is done.
+Give the block's link into the narrative, its content in that block's
+shape, and two moves that fit. Then stop. The named moves are not
+exhaustive; if something else is more obvious, suggest that instead.
+The user may choose something you did not suggest. Do what the user
+says. Stay with the current block until the user explicitly says it
+is done.
 
-When they say the block is done, revise the remaining narrative if
-it needs to change. If the tree is dirty, ask the user whether to
-commit. A dirty tree is generally undesirable; the user can still
-move on. Then present the next block.
+Do not add status chatter ("still current", "waiting on you") on
+later turns unless the reviewer asks where they are.
+
+If they reject a block's shape, rewrite that block in the shape they
+describe, in both the session and the narrative, and record the
+constraint in the log so it applies to every later block. Do not
+present the same block a third time in a different shape without
+being asked.
+
+When they say the block is done, check it in the narrative silently.
+Revise the remaining narrative if it needs to change. If the tree is
+dirty, ask the user whether to commit. A dirty tree is generally
+undesirable; the user can still move on. Then present the next block.
 
 When every block has been gone through, suggest wrap-up.
 
