@@ -16,10 +16,11 @@ constraint in the log so it applies to every later block. Do not
 present the same block a third time in a different shape without
 being asked.
 
-When they say the block is done, check it in the narrative silently.
-Revise the remaining narrative if it needs to change. If the tree is
-dirty, ask the user whether to commit. A dirty tree is generally
-undesirable; the user can still move on. Then present the next block.
+When they say the block is done, present the next block first so they
+can keep going. Then record that the previous block is done: check it
+in the narrative silently, and revise the remaining narrative if it
+needs to change. If the tree is dirty, ask the user whether to commit.
+A dirty tree is generally undesirable; the user can still move on.
 
 When every block has been gone through, suggest wrap-up.
 
