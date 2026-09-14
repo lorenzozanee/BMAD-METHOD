@@ -1,0 +1,29 @@
+# Step 2: Review files
+
+Have the silent subagent write the review narrative and the review
+log. Follow the project's artifact conventions; if there are none,
+use the project root. Prefix both files with a shared short review
+slug and check that their names are unused before creating them.
+
+- **Review narrative:** Order blocks: intent, then broad strokes for
+  the gist, then vertical slices of the main work, then periphery.
+  Organize by concern, not by file. If the work is a mechanical
+  fan-out: intent, broad strokes, then one block per kind of change
+  — what was done to that group, one or two example slices, then a
+  clickable list of the rest that got the same treatment. Then
+  periphery.
+  Use unchecked boxes for unvisited, in-progress, or reopened blocks,
+  labeling their state; check a block when the user indicates they
+  are satisfied with it. Note whether it changed during review and
+  identify the current block. Work performed on a block does not
+  itself mean it is accepted.
+- **Review log:** Read and use `{{ rendered("templates/log-template.md") }}`.
+  Keep findings, decisions, edits, and test results out of the review
+  narrative.
+
+If you are running in a sidebar of VS Code, Cursor, or another
+editor, open the narrative file in the editor.
+
+## NEXT
+
+Read fully and follow: `{{ rendered("step-03-walkthrough.md") }}`
