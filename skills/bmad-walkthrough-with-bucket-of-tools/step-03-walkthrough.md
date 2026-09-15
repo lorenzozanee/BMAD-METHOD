@@ -50,3 +50,9 @@ the review narrative.
   and push if they edited) and ask the user if that is what they
   want. Do not do it until they say so. Do not end with only a
   summary in chat.
+{% if workflow.on_complete %}
+
+# On Complete
+
+{{ workflow.on_complete }}
+{% endif %}

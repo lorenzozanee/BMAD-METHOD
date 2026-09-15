@@ -73,31 +73,20 @@ of the rest that got the same treatment.
 **Periphery** (last block). Docs, build registration, small enablers.
 References only, one clause each.
 
-# On Activation
+{% if workflow.persistent_facts %}
+# Persistent facts
 
-## Step 1: Execute Prepend Steps
-
-Execute each of these steps in order before proceeding (`_None._` means skip):
-
-{{ workflow.activation_steps_prepend }}
-
-## Step 2: Load Persistent Facts
-
-Treat every entry below as foundational context you carry for the rest
-of the workflow run. Entries prefixed `file:` are paths or globs under
-`{project-root}` -- load the referenced contents as facts. All other
-entries are facts verbatim (`_None._` means none):
+Do not compact these away. Load `file:` paths. Expand globs and read
+every match. Other entries are facts.
 
 {{ workflow.persistent_facts }}
 
-## Step 3: Execute Append Steps
+{% endif %}
+{% if workflow.on_activation %}
+# On Activation
+{{ workflow.on_activation }}
 
-Execute each of these steps in order (`_None._` means skip):
-
-{{ workflow.activation_steps_append }}
-
-Activation is complete after all activation steps have run.
-
+{% endif %}
 # Workflow
 
 Follow the step files in order. Read one step fully, execute it, then
