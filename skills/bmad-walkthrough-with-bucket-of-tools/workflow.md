@@ -1,42 +1,7 @@
-# Walkthrough with a bucket of tools
-
-**Goal:** Guide a human review of a target, one block at a time.
-
-**CRITICAL:** If a step directs you to another snapshot file,
-read it fully and follow it. No exceptions.
-
-Help the user review a target, one block at a time. They may stop
-to inspect, edit, or test. Keep track. The review is done when the
-user says it is.
-
-# Human attention is scarce
-
-Show only what they need to see now. Do not distract them. Still do
-the rest — write the log, revise the narrative, look things up,
-reason — but do not put it in the session.
-
-Do not call tools in this session. Spawn a cheap background subagent
-for writing files, lookups, and any other tool work. Doing that work
-yourself is not silent, even if you say nothing about it.
-
-# Write for a human
-
-The session and the review narrative are for a human. Assume that said
-human has reasonable understanding of the surrounding context, but doesn't
-know anything about the target except things that have been mentioned in
-this session.
-Leave the brief log style to the log.
-
-Never write a file or `file:line` reference as plain text.
-
-In the review narrative, every file and `file:line` is a markdown
-link relative to that file (`[label](../src/foo.ts)`). No other
-form.
-
-In the session, never write a markdown link. Use a form the host
-can click: a Cursor code citation (`startLine:endLine:path` on the
-opening fence); a VS Code `#file:path`; or a CWD-relative
-`path:line` with no leading `/`. If unsure, use `path:line`.
+Guide a human review of a target, one block at a time. They may
+stop to inspect, edit, or test. Keep track of which blocks the
+user has called done. A block or the review as a whole is done
+only when the user says it is.
 
 # Terms
 
@@ -50,6 +15,36 @@ opening fence); a VS Code `#file:path`; or a CWD-relative
 - **Finding:** A concrete issue from inspection.
 - **Move:** A user-selected action, maybe from a repertoire of
   moves in the walkthrough step.
+
+# Human attention is scarce
+
+Show only what a human needs to see. Do not distract them. Write
+the log, edit the narrative, look things up, reason — but do not
+put it in the session.
+
+Spawn a cheap background subagent for writing log and narrative
+files. Doing that work in the main session distracts the user.
+
+# Write for a human
+
+The session output and the review narrative file are for a human.
+Assume that said human has reasonable understanding of the
+surrounding context, but doesn't know anything about the target
+except things that have been mentioned in this session. Leave the
+brief log style to the log.
+
+# Clickable file refs
+
+Never write a file or `file:line` reference in human-facing output
+as plain text.
+
+In the review narrative file, every file and `file:line` must be a
+markdown link relative to that file (`[label](../src/foo.ts)`).
+
+In the session, never write a markdown link. Use a form the host
+can click: a Cursor code citation (`startLine:endLine:path` on the
+opening fence); a VS Code `#file:path`; or a CWD-relative
+`path:line` with no leading `/`. If unsure, use `path:line`.
 
 # Block shapes
 
@@ -78,13 +73,6 @@ of the rest that got the same treatment.
 **Periphery** (last block). Docs, build registration, small enablers.
 References only, one clause each.
 
-# Conventions
-
-- Every operational cross-file reference in this workflow is an
-  absolute snapshot path. Open it directly; do not resolve it
-  relative to a skill directory.
-- `{project-root}`-prefixed paths resolve from the project working directory.
-
 # On Activation
 
 ## Step 1: Execute Prepend Steps
@@ -110,7 +98,7 @@ Execute each of these steps in order (`_None._` means skip):
 
 Activation is complete after all activation steps have run.
 
-# Workflow Execution
+# Workflow
 
 Follow the step files in order. Read one step fully, execute it, then
 load the next step only when directed. Do not skip, reorder, or
