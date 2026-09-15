@@ -73,6 +73,11 @@ of the rest that got the same treatment.
 **Periphery** (last block). Docs, build registration, small enablers.
 References only, one clause each.
 
+{% if workflow.on_activation %}
+# On Activation
+
+{{ workflow.on_activation }}
+{% endif %}
 {% if workflow.persistent_facts %}
 # Persistent facts
 
@@ -80,11 +85,6 @@ Do not compact these away. Load `file:` paths. Expand globs and read
 every match. Other entries are facts.
 
 {{ workflow.persistent_facts }}
-
-{% endif %}
-{% if workflow.on_activation %}
-# On Activation
-{{ workflow.on_activation }}
 
 {% endif %}
 # Workflow
